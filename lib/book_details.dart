@@ -1,4 +1,6 @@
+import 'package:book_project/action_points.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -292,43 +294,48 @@ class _BookDetailsState extends State<BookDetails> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(vertical: 10),
-                          child: ListTile(
-                            leading: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Color(0xff130B20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(15.0),
-                                child: Text(
-                                  myindex.toString(),
-                                  style: GoogleFonts.jost(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                    fontSize: 15,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(() => ActionPoints());
+                            },
+                            child: ListTile(
+                              leading: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Color(0xff130B20),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(15.0),
+                                  child: Text(
+                                    myindex.toString(),
+                                    style: GoogleFonts.jost(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            title: Text(
-                              "This is first key insights from the first key Data",
-                              style: GoogleFonts.jost(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white,
-                                fontSize: 15,
+                              title: Text(
+                                "This is first key insights from the first key Data",
+                                style: GoogleFonts.jost(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
                               ),
-                            ),
-                            subtitle: Text(
-                              "Total Keypoints - 7",
-                              style: GoogleFonts.jost(
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                                fontSize: 15,
+                              subtitle: Text(
+                                "Total Keypoints - 7",
+                                style: GoogleFonts.jost(
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
                               ),
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
